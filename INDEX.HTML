@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('images.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        textarea {
+            height: 150px;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        input[type="submit"], input[type="text"], textarea {
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        input[type="submit"]:hover, input[type="text"]:focus, textarea:focus {
+            background-color: #0056b3;
+            color: #fff;
+        }
+
+        .colored-button {
+            background-color: #ff5733;
+            color: #fff;
+        }
+
+        .colored-button:hover {
+            background-color: #ff3714;
+        }
+
+        .radio-label {
+            display: block;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .radio-group {
+            margin-bottom: 20px;
+        }
+
+        .radio-label input[type="radio"] {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Feedback Form</h1>
+        <form action="submit_feedback.php" method="post">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required placeholder="John Doe">
+
+            <label for="email">Your Email:</label>
+            <input type="text" id="email" name="email" required placeholder="john@example.com">
+
+            <label for="course">Course Name:</label>
+            <input type="text" id="course" name="course" required placeholder="Math 101">
+
+            <div class="radio-group">
+                <label class="radio-label">Satisfaction Level:</label>
+                <label class="radio-label">
+                    <input type="radio" name="satisfaction" value="excellent"> Excellent
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="satisfaction" value="good"> Good
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="satisfaction" value="fair"> Fair
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="satisfaction" value="poor"> Poor
+                </label>
+            </div>
+
+            <label for="feedback">Your Feedback:</label>
+            <textarea id="feedback" name="feedback" required placeholder="Please provide your feedback here."></textarea>
+
+            <input type="submit" value="Submit Feedback" class="colored-button">
+        </form>
+        <p>Already submitted your feedback? <a href="success.html">View Confirmation</a></p>
+    </div>
+</body>
+</html>
